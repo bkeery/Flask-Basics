@@ -1,0 +1,27 @@
+At least 2 raspberry pi's., a hub and at least one camera
+
+the hub is wifi access point and bridge (if wired to ethernet)
+assume the hub is the chartplotter running OpenCPN
+it is also running a small website consolidating the cameras installed
+
+assume the DNS hostname is chartplotter
+assume that each camera has DNS host name such as Bowcam, MastCam, SternCam, PortCam, StarboardCam
+
+ChartPlotter:5000/index.html is the home page
+it will show a gallery of images from the remote cameras.
+
+if you click on the image in the gallery, you open the remote camera controls
+- take picture
+- download picture
+- future ---change mode from camera to video or back to camera
+
+
+Remote Cameras (eventually) are named in .enveach camera will have a DNS name such as BowCam, MastCam, etc
+    each camera is an endpoint
+    the chartplotter will call endpoint to take-a-picture (updating static/LastImage.jpg)
+
+   the chartplotter will show the last image taken in a Gallery
+   example
+        Bowcam:5000/static/LastImage.jpg
+        Mastcam:5000/static/LastImage.jpg
+        etc.

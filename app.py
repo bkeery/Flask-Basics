@@ -3,19 +3,19 @@ from flask import Flask,render_template,Response
 app=Flask(__name__)
 
 
-# def generate_frames():
-#    while True:
-#            
-#        ## read the camera frame
-#        success,frame=camera.read()
-#        if not success:
-#            break
-#        else:
-#            ret,buffer=cv2.imencode('.jpg',frame)
-#            frame=buffer.tobytes()
+# ChartPlotter:5000/index.html
+#   is the root page of the system.
+#   is also the router
+#   each Remote Cameras (eventually named in .env)
+#   each camera will have a DNS name such as BowCam, MastCam, etc
+#   each camera is an endpoint
+#   in addition, the chartplotter will call endpoint to take-a-picture
 #
-#        yield(b'--frame\r\n'
-#                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+#   the chartplotter will show the last image taken in a Gallery
+#       Bowcam:5000/static/LastImage.jpg
+#       Mastcam:5000/static/LastImage.jpg
+#       etc.
+#   the Gallery will allow update or download
 
 
 @app.route('/')
